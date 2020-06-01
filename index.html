@@ -1,11 +1,20 @@
 <html>
   <head>
+    <script type="text/javascript">
+     function showClock(){
+       setInterval(function(){
+         document.getElementById('clock').innerHTML = '12:00';
+       }, 3000);
+     }
+  </script>
     <title>Clock by Loc Tran</title>
     <style>
       body { background-color: black;}
+      #clock {color: white};
     </style>
   </head>
-  <body>
-    <h1>Have a nice day!</h1>
+  <body onload="showClock()">
+    <div id='clock'></div>
   </body>
+  <script></script>
 </html>
