@@ -2,23 +2,34 @@
   <head>
     <script type="text/javascript">
      function showClock(){       
-        var today = new Date();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        document.getElementById('clock').innerHTML = time;
+        document.getElementById('clock').innerHTML = getTime();
 
         setInterval(function(){
-           document.getElementById('clock').innerHTML = time;
+           document.getElementById('clock').innerHTML = getTime();
         }, 1000);
+     }
+     function getTime(){
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+       return time;
      }
   </script>
     <title>Clock by Loc Tran</title>
     <style>
       body { background-color: black;}
-      #clock {color: white};
+      #clock {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+      };
     </style>
   </head>
   <body onload="showClock()">
-    <div id='clock'></div>
+    <h1 id='clock'></h1>
   </body>
   <script></script>
 </html>
