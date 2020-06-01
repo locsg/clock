@@ -1,10 +1,14 @@
 <html>
   <head>
     <script type="text/javascript">
-     function showClock(){
-       setInterval(function(){
-         document.getElementById('clock').innerHTML = '12:00';
-       }, 3000);
+     function showClock(){       
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        document.getElementById('clock').innerHTML = time;
+
+        setInterval(function(){
+           document.getElementById('clock').innerHTML = time;
+        }, 1000);
      }
   </script>
     <title>Clock by Loc Tran</title>
